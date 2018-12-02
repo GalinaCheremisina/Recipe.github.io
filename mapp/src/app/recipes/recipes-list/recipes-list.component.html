@@ -1,13 +1,17 @@
 <div class="row">
     <div class="col-xs-12">
-        <button class="btn btn-success">New recipe</button>
+        <button 
+            *ngIf="_authService.isAuthenticated()"
+            class="btn btn-success" 
+            (click)="onNewRecipe()">New recipe</button>
     </div>
 </div>
 <hr/>
 <div class="row">
     <div class="col-xs-12">
         <app-recipes-item 
-        *ngFor="let recipeEl of recipes" 
-        [recipe]="recipeEl"></app-recipes-item>
+        *ngFor="let recipeEl of recipes;let i = index" 
+        [recipe]="recipeEl"
+        [i]=i></app-recipes-item>
     </div>
 </div>
