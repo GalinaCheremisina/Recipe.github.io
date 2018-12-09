@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-xs-12">
         <button 
-            *ngIf="_authService.isAuthenticated()"
+            *ngIf="isAuthenticated()"
             class="btn btn-success" 
             (click)="onNewRecipe()">New recipe</button>
     </div>

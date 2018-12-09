@@ -20,7 +20,7 @@
       </button>
       <ul class="dropdown-menu">
           <li><a (click)="onAddToShoppingList()">To shopping list</a></li>
-          <li><a (click)="onRecipeEdit()" *ngIf="_authService.isAuthenticated()">Edit recipe</a></li>
+          <li><a (click)="onRecipeEdit()" *ngIf="isAuthenticated()">Edit recipe</a></li>
           <li><a (click)="onDeleteEdit()">Delete recipe</a></li>
       </ul>
     </div>

@@ -106,4 +106,8 @@ ngOnDestroy(){
   this.activeUserSubscription.unsubscribe();
 }
 
+getControls() {
+  return (<FormArray>this.recipeForm.get('ingredients')).controls;
+}
+
 }

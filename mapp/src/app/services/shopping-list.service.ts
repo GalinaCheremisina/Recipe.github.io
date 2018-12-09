@@ -22,18 +22,19 @@ export class ShoppingListService{
       ];
 
     /** This is a description of the getIngredient function. */
-    getIngredient(): Ingredient[]{
+   /* getIngredient(): Ingredient[]{
         return this.ingredients.slice();
-    }
+
+    }*/
     /** This is a description of the getIngredient function. */
     getIngredientToIndex(index:number): Ingredient{
         return this.ingredients[index];
     }
     /** This is a description of the addIngredient function. */
-    addIngredient(ingredient:Ingredient){
+    /*addIngredient(ingredient:Ingredient){
         this.ingredients.push(ingredient);
         this.ingredientsChanged.next(this.ingredients.slice());
-    }
+    }*/
     /** This is a description of the addIngredientsFromRecipe function. */
     addIngredientsFromRecipe(ingredients:Ingredient[]){
         this.ingredients.push(...ingredients);

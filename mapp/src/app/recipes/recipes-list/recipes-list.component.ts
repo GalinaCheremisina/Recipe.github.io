@@ -39,4 +39,7 @@ export class RecipesListComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  isAuthenticated():boolean {
+    return this._authService.isAuthenticated();
+  }
 }

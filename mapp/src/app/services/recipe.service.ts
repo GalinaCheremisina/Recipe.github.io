@@ -11,13 +11,11 @@
  * @function {} addToShoppingList - It adds ingredient to shopping list(ShoppingListService)
  */
 import { Injectable } from "@angular/core";
+import { Subject } from "rxjs/Subject";
 
 import { Recipe } from "../recipes/recipe.model";
 import { Ingredient } from "../shared/ingredient.model";
-import { ShoppingListService } from "./shopping-list.service";
-import { Subject } from "rxjs/Subject";
 
-@Injectable()
 export class RecipeService{
 
     recipesChanged = new Subject<Recipe[]>();
@@ -40,7 +38,7 @@ export class RecipeService{
             ])
     ];
 
-    constructor(private _shoppingListService:ShoppingListService){}
+    constructor(){}
 
     /** This is a description of the getRecipes function. */
     getRecipes():Recipe[]{
@@ -54,10 +52,6 @@ export class RecipeService{
     setRecipes(recipes:Recipe[]){
         this.recipes = recipes;
         this.recipesChanged.next(this.recipes.slice());
-    }
-    /** This is a description of the addToShoppingList function. */
-    addToShoppingList(ingredients:Ingredient[]){
-        this._shoppingListService.addIngredientsFromRecipe(ingredients);
     }
     /** This is a description of the addRecipe function. */
     addRecipe(recipe: Recipe):void {

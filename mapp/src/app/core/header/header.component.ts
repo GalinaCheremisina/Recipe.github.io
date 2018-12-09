@@ -1,7 +1,6 @@
 import { Component} from '@angular/core';
-import { DataStorageService } from '../shared/data-storage.service';
-import { Response } from '@angular/http';
-import { AuthService } from '../services/auth.service';
+import { DataStorageService } from '../../shared/data-storage.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -17,16 +16,21 @@ export class HeaderComponent{
   onSaveData(){
     this._dataStorage.storeRecipes()
       .subscribe(
-        (response:Response)=>{
+        (response)=>{
           console.log(response);
         }
       )
   }
+
   onFetchData(){
     this._dataStorage.getRecipes();
   }
 
   onLogout() {
     this._authService.logout();
+  }
+
+  isAuthenticated():boolean {
+    return this._authService.isAuthenticated();
   }
 }
