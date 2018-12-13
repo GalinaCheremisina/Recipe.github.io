@@ -17,7 +17,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy{
   @ViewChild('form') form:NgForm;
   private subscription:Subscription;
   editMode = false;
-  editedItemIndex:number;
+  editedItemIndex:number; 
   editedItem:Ingredient;
 
   constructor(private _store: Store<fromShoppingList.AppState>) { }
@@ -45,9 +45,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy{
     const value = form.value;
     const newIngredient = new Ingredient(value.name,value.amount);
     if(this.editMode){
-      this._store.dispatch(new ShoppingListAction.UpdateIngredient(
-        {index:this.editedItemIndex, 
-         ingredient: newIngredient}));
+      this._store.dispatch(new ShoppingListAction.UpdateIngredient({ingredient: newIngredient}));
     }else
       this._store.dispatch(new ShoppingListAction.AddIngredient(newIngredient));
     this.editMode = false;

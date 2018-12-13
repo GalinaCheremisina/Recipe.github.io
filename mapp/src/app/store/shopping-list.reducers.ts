@@ -34,21 +34,21 @@ export function shoppingListReduser(state = initialState, action: ShoppingListAc
             return {
                     ...state,
                     ingredients: [...state.ingredients,...action.payload]
-            }
+            };
         case ShoppingListActions.UPDATE_INGREDIENT:
-            const ingredient = state.ingredients[action.payload.index];
-            const updateIngredient = {
+            const ingredient = state.ingredients[state.editedIngredientIndex];
+            const updatedIngredient = {
                 ...ingredient,
                 ...action.payload.ingredient
             };
             const ingredients = [...state.ingredients];
-            console.log(updateIngredient);
-            console.log(ingredients[action.payload.index]);
-            ingredients[action.payload.index] = updateIngredient;
+            ingredients[state.editedIngredientIndex] = updatedIngredient;
             return {
                 ...state,
-                ingredients: ingredients
-            }
+                ingredients: ingredients,
+                editedIngredient: null,
+                editedIngredientIndex: -1
+            };
         case ShoppingListActions.DELETE_INGREDIENT:
             const oldIngredients = [...state.ingredients];
             oldIngredients.splice(state.editedIngredientIndex, 1);
