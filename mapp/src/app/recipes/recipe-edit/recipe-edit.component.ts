@@ -1,26 +1,25 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
-import { RecipeService } from 'src/app/services/recipe.service';
-import { AuthService } from 'src/app/services/auth.service';
-import { Subscription } from 'rxjs/Subscription';
+import { Store } from '@ngrx/store';
+
+import * as fromRecipe from '../store/recipes.redusers';
+import * as RecipeAction from '../store/recipes.actions';
 
 @Component({
   selector: 'app-recipe-edit',
   templateUrl: './recipe-edit.component.html',
   styleUrls: ['./recipe-edit.component.css']
 })
-export class RecipeEditComponent implements OnInit, OnDestroy {
+export class RecipeEditComponent implements OnInit {
 
   id:number;
   editMode = false;
   recipeForm: FormGroup;
-  private activeUserSubscription: Subscription;
 
   constructor(private _route: ActivatedRoute,
-              private _recipeService: RecipeService,
               private _router: Router,
-              private _authService:AuthService) {
+              private _store: Store<fromRecipe.FeatureState>) {
   }
 
 ngOnInit() {
@@ -32,18 +31,15 @@ ngOnInit() {
           this.initForm();
         }
       );
-  this.activeUserSubscription = this._authService.activeUser.subscribe(
-    (value)=>{
-      if (!value){this._router.navigate(['../'], {relativeTo: this._route});}
-    }
-  )
 }
 
 onSubmit() {
   if (this.editMode) {
-    this._recipeService.updateRecipe(this.id, this.recipeForm.value);
+    this._store.dispatch(new RecipeAction.UpdateRecipes(
+                 {index: this.id, updatedRecipe: this.recipeForm.value})
+                );
   } else {
-    this._recipeService.addRecipe(this.recipeForm.value);
+    this._store.dispatch(new RecipeAction.AddRecipes(this.recipeForm.value));
   }
   this.onCancel();
 }
@@ -75,23 +71,27 @@ private initForm() {
   let recipeIngredients = new FormArray([]);
 
   if (this.editMode) {
-    const recipe = this._recipeService.getRecipesToId(this.id);
-    recipeName = recipe.name;
-    recipeImagePath = recipe.imagePath;
-    recipeDescription = recipe.description;
-    if (recipe['ingredients']) {
-      for (let ingredienty of recipe.ingredients) {
-        recipeIngredients.push(
-          new FormGroup({
-            'name': new FormControl(ingredienty.name, Validators.required),
-            'amount': new FormControl(ingredienty.amount, [
-              Validators.required,
-              Validators.pattern(/^[1-9]+[0-9]*$/)
-            ])
-          })
-        );
-      }
-    }
+    this._store.select('recipes')
+        .take(1)
+        .subscribe((recipeState:fromRecipe.State)=>{
+            const recipe = recipeState.recipes[this.id];
+            recipeName = recipe.name;
+            recipeImagePath = recipe.imagePath;
+            recipeDescription = recipe.description;
+            if (recipe['ingredients']) {
+              for (let ingredienty of recipe.ingredients) {
+                recipeIngredients.push(
+                  new FormGroup({
+                    'name': new FormControl(ingredienty.name, Validators.required),
+                    'amount': new FormControl(ingredienty.amount, [
+                      Validators.required,
+                      Validators.pattern(/^[1-9]+[0-9]*$/)
+                    ])
+                  })
+                );
+              }
+            }
+        })
   }
 
   this.recipeForm = new FormGroup({
@@ -100,10 +100,6 @@ private initForm() {
     'description': new FormControl(recipeDescription, Validators.required),
     'ingredients': recipeIngredients
   });
-}
-
-ngOnDestroy(){
-  this.activeUserSubscription.unsubscribe();
 }
 
 getControls() {

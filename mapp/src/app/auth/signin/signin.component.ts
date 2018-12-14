@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { AuthService } from 'src/app/services/auth.service';
+import { Store } from '@ngrx/store';
+
+import * as fromAuth from '../store/auth.reducers';
+import * as AuthAction from '../store/auth.actions';
 
 @Component({
   selector: 'app-signin',
@@ -14,7 +17,7 @@ export class SigninComponent implements OnInit {
     password : new FormControl('',[Validators.required,Validators.minLength(6)]),
   })
 
-  constructor(private _authService: AuthService) { }
+  constructor(private _store: Store<fromAuth.State>) { }
 
   ngOnInit() {
   }
@@ -22,7 +25,7 @@ export class SigninComponent implements OnInit {
   onSignip(form: FormGroup){
     const email = form.value.email;
     const password = form.value.password;
-    this._authService.signinUser(email, password);
+    this._store.dispatch(new AuthAction.TrySignin({username:email,password: password}));
   }
 
 }

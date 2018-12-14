@@ -1,45 +1,34 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Recipe } from '../recipe.model';
-import { RecipeService } from '../../services/recipe.service';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { AuthService } from 'src/app/services/auth.service';
+import { Observable } from 'rxjs/Observable';
+import { Store } from '@ngrx/store';
+
+import * as fromApp from '../../store/app.reducers';
+import * as fromAuth from '../../auth/store/auth.reducers';
+import * as fromRecipe from '../../recipes/store/recipes.redusers';
 
 @Component({
   selector: 'app-recipes-list',
   templateUrl: './recipes-list.component.html',
   styleUrls: ['./recipes-list.component.css']
 })
-export class RecipesListComponent implements OnInit, OnDestroy {
+export class RecipesListComponent implements OnInit {
 
-  recipes:Recipe[];
-  subscription: Subscription;
+  $authState: Observable<fromAuth.State>;
+  $recipes: Observable<fromRecipe.State>;
   
   constructor(
-    private _recipeService:RecipeService,
     private _router:Router,
     private _route:ActivatedRoute,
-    private _authService:AuthService) { }
+    private _store:Store<fromRecipe.FeatureState>) { }
 
   ngOnInit() {
-    this.subscription = this._recipeService.recipesChanged
-      .subscribe(
-        (recipes: Recipe[]) => {
-          this.recipes = recipes;
-        }
-      );
-    this.recipes = this._recipeService.getRecipes();
+    this.$authState = this._store.select('auth');
+    this.$recipes = this._store.select('recipes');
   }
 
   onNewRecipe(){
     this._router.navigate(['new'],{relativeTo:this._route});
   }
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
-
-  isAuthenticated():boolean {
-    return this._authService.isAuthenticated();
-  }
 }
