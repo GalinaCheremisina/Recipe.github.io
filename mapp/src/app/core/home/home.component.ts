@@ -82,7 +82,7 @@ import {
         ]))
       ]),
       transition('hover => static', [
-        animate(3000, keyframes([
+        animate(1000, keyframes([
           style({
             opacity: 1,
             background:'#000',
