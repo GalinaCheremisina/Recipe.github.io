@@ -13,3 +13,78 @@
     width:300px;
     height:300px;
 }
+.about-us , .services, .gallery{
+    display: block;
+    padding: 4em 0em;
+}
+
+.about-us  img {
+    vertical-align: middle;
+    width: 100%;
+}
+.about-img {
+    margin-top: 1em;
+}
+.about-us h2 ,  .services h3, .gallery h3{
+    font-size: 4em;
+	color:#000;
+}
+.about-us p {
+    font-size: 1em;
+    color: #999;
+    line-height: 2em;
+}
+.about-left,.about-right ,.services-left,.services-right{
+    margin-top: 1em;
+}
+.w3-agileits-gallery-grids.agileits-gallery-grids {
+    margin: 2em 0;
+}
+
+.w3-agileits-gallery-grids a {
+    display: block;
+    overflow: hidden;
+	position:relative;
+}
+.agile-b-wrapper{
+    background: rgba(0, 0, 0, 0.58);
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    text-align: center;
+    top: 0;
+    left: 0;
+    transition: .5s all;
+    opacity: 0;
+    font-size: 22px;
+    color: #fff;
+    padding: 1em;
+}
+.w3-agileits-gallery-grids a:hover .agile-b-wrapper{
+	height: 100%;
+	opacity: 1;
+}
+.gallery h3{
+    text-align: center;
+}
+.gallery h3 {
+	 color: #000000;
+ }
+ .agileinfo-gallery {
+    margin: 4em 0 0 0;
+}
+.gallery-grid-top .agile-b-wrapper i.glyphicon.glyphicon-search {
+    font-size: 2em;
+    color: #fff;
+    margin: 3em 0 0 0;
+}
+.gallery-grid-middle .agile-b-wrapper i.glyphicon.glyphicon-search {
+    font-size: 1.5em;
+    color: #fff;
+    margin: 1.5em 0 0 0;
+}
+.gallery-grid-bottom .agile-b-wrapper i.glyphicon.glyphicon-search {
+    font-size: 1.5em;
+    color: #fff;
+    margin: 2em 0 0 0;
+}

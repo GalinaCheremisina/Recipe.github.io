@@ -1,34 +1,57 @@
-<nav class="navbar navbar-default">
-  <div class="container">
-    <div class="navbar-header">
-      <a routerLink="/" class="navbar-brand">Recipe Book</a>
-    </div>
+<div class="w3l-banner">
+  <div class="header">
+  <div class="top-bar">  
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
 
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-          <li routerLinkActive="active"><a routerLink="/recipes">Recipes</a></li>
-          <li routerLinkActive="active"><a routerLink="/shopping-list">Shopping List</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <ng-template [ngIf]="!(authState$ | async).authenticated">
-          <li><a routerLink="/signup">Register</a></li>
-          <li><a routerLink="/signin">Login</a></li>
-        </ng-template>
-        <li><a
-          style="cursor: pointer;"
-          (click)="onLogout()"
-          *ngIf="(authState$ | async).authenticated">Logout</a></li>
-        <li 
-        class="dropdown" 
-        appDropdown
-        *ngIf="(authState$ | async).authenticated">
-          <a class="dropdown-toggle" role='button'>Manager <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-              <li><a (click)="onSaveData()">Save Data</a></li>
-              <li><a (click)="onFetchData()">Fetch Data</a></li>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-left">
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a routerLink="/">Home</a></li>
+            <li routerLinkActive="active"><a routerLink="/recipes">Recipes</a></li>
+            <li routerLinkActive="active"><a routerLink="/shopping-list">Shopping List</a></li>
           </ul>
-        </li>
-      </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <ng-template [ngIf]="!(authState$ | async).authenticated">
+              <li><a routerLink="/signup">Register</a></li>
+              <li><a routerLink="/signin">Login</a></li>
+            </ng-template>
+            <li><a
+              style="cursor: pointer;"
+              (click)="onLogout()"
+              *ngIf="(authState$ | async).authenticated">Logout</a></li>
+            <li 
+            class="dropdown" 
+            appDropdown
+            *ngIf="(authState$ | async).authenticated">
+              <a class="dropdown-toggle" role='button'>Manager <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                  <li><a (click)="onSaveData()">Save Data</a></li>
+                  <li><a (click)="onFetchData()">Fetch Data</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="logo">
+    <a routerLink="/recipes">recipes</a>
+  </div>
+  <div class="container">
+    <div class="flexslider-info">
+      <div class="w3l-info">
+        <h1>Welcome to the</h1>
+        <h3>book of recipes</h3>
+      </div>
     </div>
   </div>
-</nav>
+  </div>
+</div>
