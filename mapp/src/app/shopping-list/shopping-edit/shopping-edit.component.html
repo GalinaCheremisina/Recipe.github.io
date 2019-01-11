@@ -20,9 +20,22 @@
             required
             pattern="^[1-9]+[0-9]*$">
           </div>
+          <div class="col-sm-2 form-group">
+            <label for="step"></label>
+            <select
+            name="step"
+            class="form-control"
+            ngModel >
+                <option value="" ></option>
+                <option value="Tsp" >Tsp</option>
+                <option value="Gms" >Gms</option>
+                <option value="Cups" >Cups</option>
+                <option value="Nos" >Nos</option>
+            </select>
+          </div>
       </div>
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-12 but_manage">
             <button 
               class="btn btn-success" 
               type="submit" 

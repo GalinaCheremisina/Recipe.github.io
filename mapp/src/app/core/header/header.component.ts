@@ -15,6 +15,7 @@ import * as RecipeActions from '../../recipes/store/recipes.actions';
 export class HeaderComponent implements OnInit{
 
   authState$: Observable<fromAuth.State>;
+  collapsein = false;
 
   constructor(private _store: Store<fromRecipe.FeatureState>){}
 

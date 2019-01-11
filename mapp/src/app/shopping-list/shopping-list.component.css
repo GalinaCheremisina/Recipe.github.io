@@ -1,0 +1,21 @@
+.shopping_wraper{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+h2,.h2{
+    margin-bottom: 1em;
+}
+ul.list-group li{
+    cursor: pointer;
+    margin-bottom: 8px;
+    border-radius: 0;
+    border-color: #f90;
+}
+ul.list-group li a{
+    color: #555;
+}
+ul.list-group li:hover {
+    color: #000;
+    background-color: rgba(255, 153, 0, 0.45098039215686275);
+    border-color: #f90;
+}

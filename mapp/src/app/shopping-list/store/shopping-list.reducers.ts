@@ -2,8 +2,6 @@ import * as ShoppingListActions from './shopping-list.actions';
 
 import { Ingredient } from "../../shared/ingredient.model";
 
-export const ADD_INGREDIENT = 'ADD_INGREDIENT';
-
 export interface AppState{
     shoppingList:State;
 }
@@ -15,8 +13,7 @@ export interface State{
 
 const initialState = {
     ingredients: [
-        new Ingredient('apples',5),
-        new Ingredient('potatos',10)
+        new Ingredient('apples',3,'')
       ],
     editedIngredient: null,
     editedIngredientIndex: -1

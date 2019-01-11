@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 
@@ -10,7 +10,7 @@ import * as AuthAction from '../store/auth.actions';
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css']
 })
-export class SigninComponent implements OnInit {
+export class SigninComponent {
 
   authForm: FormGroup = new FormGroup({
     email : new FormControl('',[Validators.email,Validators.required]),
@@ -18,9 +18,6 @@ export class SigninComponent implements OnInit {
   })
 
   constructor(private _store: Store<fromAuth.State>) { }
-
-  ngOnInit() {
-  }
 
   onSignip(form: FormGroup){
     const email = form.value.email;

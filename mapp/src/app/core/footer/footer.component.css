@@ -1,0 +1,107 @@
+.footer-top {
+    padding: 4em 0;
+	background:#191d20;
+}
+.footer-grid h3,.footer-list h3,.agile-footer-grid h3{
+    font-size: 1.5em;
+    margin: 0 0 1em 0;
+    color: #FFFFFF;
+}
+.footer-logo  a {
+    color: #FFFFFF;
+    font-size: 2em;
+	font-weight:600;
+    text-decoration: none;
+}
+.footer-grid p {
+    color: #bbbbbb;
+    font-size: .9em;
+    line-height: 1.8em;
+    margin:1em 0;
+}
+.footer-grid ul, .footer-list ul {
+    padding: 0;
+    margin: 0;
+}
+.footer-grid ul li, .footer-list ul li {
+    display: block;
+    margin: .5em 0;
+}
+.footer-list ul li {
+    color: #bbbbbb;
+    font-size: 1em;
+}
+.footer-grid ul li a {
+    color: #bbbbbb;
+    font-size: 1em;
+    text-decoration: none;
+    line-height: 2em;
+}
+.footer-grid ul li a:hover{
+	color:#ff9900;	
+}
+.agile-footer-grid ul {
+    padding: 0;
+    margin: 0;
+}
+ul.w3agile_footer_grid_list li {
+    list-style-type: none;
+    color: #bbbbbb;
+    line-height: 1.8em;
+    margin-bottom: 1em;
+    font-size: 1em;
+}
+ul.w3agile_footer_grid_list li a {
+    color: #ff9900;
+    text-decoration: none;
+}
+ul.w3agile_footer_grid_list li span {
+    display: block;
+    margin: 1em 0 0;
+}
+ul.w3agile_footer_grid_list i.fa.fa-twitter {
+    margin-right: 1em;
+}
+.agile-footer-grid input[type="email"]{
+	outline:none;
+	padding:10px;
+	background:#fff;
+	border:none;
+	font-size:14px;
+	color:#212121;
+    margin-top: 1em;
+	width:100%;
+}
+.agile-footer-grid input[type="submit"]{
+	outline: none;
+    padding: 0.6em 1em;
+    background: #ff9900;
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    margin: 1em 0 0;
+    border: 2px solid #ff9900;
+    width: 40%;
+    text-transform: uppercase;
+}
+.agile-footer-grid input[type="submit"]:hover{
+    border: 2px solid #ff9900;
+    background: none;
+}
+.wthree_copy_right{
+	padding:2em 0;
+	background:#000000;
+	text-align:center;
+}
+.wthree_copy_right p{
+	color:#fff;
+	line-height:1.8em;
+    word-spacing: 0.2em;
+}
+.wthree_copy_right p a{
+	text-decoration:underline;
+	color:#fff;
+}
+.wthree_copy_right p a:hover{
+	color:#ff9900;
+}

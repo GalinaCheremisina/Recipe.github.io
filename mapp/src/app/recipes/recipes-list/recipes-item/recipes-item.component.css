@@ -1,1 +1,12 @@
-a.list-group-item{cursor: pointer;}
+a.list-group-item{
+    cursor: pointer;
+    margin-bottom: 15px;
+    border-radius: 0;
+    border-color: #f90;
+}
+.list-group-item.active, .list-group-item.active:focus, .list-group-item:hover {
+    z-index: 2;
+    color: #000;
+    background-color: rgba(255, 153, 0, 0.45098039215686275);
+    border-color: #f90;
+}

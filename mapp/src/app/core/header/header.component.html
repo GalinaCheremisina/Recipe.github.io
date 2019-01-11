@@ -4,30 +4,37 @@
     <nav class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+          <button 
+            (click)="collapsein=!collapsein"
+            type="button" 
+            class="navbar-toggle collapsed">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </button>
+          </button> 
         </div>
 
-        <div class="collapse navbar-collapse" id="myNavbar">
+        <div [ngClass]="{in:collapsein}" class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-left">
-            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a routerLink="/">Home</a></li>
+            <li 
+              routerLinkActive="active" 
+              [routerLinkActiveOptions]="{exact:true}">
+                <a routerLink="/">Home</a></li>
             <li routerLinkActive="active"><a routerLink="/recipes">Recipes</a></li>
             <li routerLinkActive="active"><a routerLink="/shopping-list">Shopping List</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <ng-template [ngIf]="!(authState$ | async).authenticated">
-              <li><a routerLink="/signup">Register</a></li>
-              <li><a routerLink="/signin">Login</a></li>
+              <li routerLinkActive="active"><a routerLink="/signup">Register</a></li>
+              <li routerLinkActive="active"><a routerLink="/signin">Login</a></li>
             </ng-template>
-            <li><a
+            <li routerLinkActive="active"><a
               style="cursor: pointer;"
               (click)="onLogout()"
               *ngIf="(authState$ | async).authenticated">Logout</a></li>
             <li 
+            routerLinkActive="active"
             class="dropdown" 
             appDropdown
             *ngIf="(authState$ | async).authenticated">

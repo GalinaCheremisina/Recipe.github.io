@@ -49,9 +49,10 @@ onAddIngredient() {
     new FormGroup({
       'name': new FormControl(null, Validators.required),
       'amount': new FormControl(null, [
-      Validators.required,
-      Validators.pattern(/^[1-9]+[0-9]*$/)
-      ])
+          Validators.required,
+          Validators.pattern(/^[1-9]+[0-9]*$/)
+      ]),
+      'step': new FormControl()
     })
   );
 }
@@ -80,13 +81,15 @@ private initForm() {
             recipeDescription = recipe.description;
             if (recipe['ingredients']) {
               for (let ingredienty of recipe.ingredients) {
+                if(!ingredienty.step){ ingredienty.step =''; }
                 recipeIngredients.push(
                   new FormGroup({
                     'name': new FormControl(ingredienty.name, Validators.required),
                     'amount': new FormControl(ingredienty.amount, [
                       Validators.required,
                       Validators.pattern(/^[1-9]+[0-9]*$/)
-                    ])
+                    ]),
+                    'step': new FormControl(ingredienty.step)
                   })
                 );
               }

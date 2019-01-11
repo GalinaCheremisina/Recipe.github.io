@@ -2,11 +2,12 @@
 class="list-group-item clearfix" 
 [routerLink]="[i]"
 routerLinkActive="active">
-  <div class="pull-left">
-      <h4 class="list-group-item-heading">{{recipe.name}}</h4>
-          <p class="list-group-item-text">{{recipe.description}}</p>
-  </div>
-  <span class="pull-right">
-          <img [src]="recipe.imagePath" alt="" class="" style="max-height: 50px;" />
-  </span>
+        <div class="row">
+                <div class="pull-left col-md-9">
+                        <h4 class="list-group-item-heading">{{recipe.name}}</h4>
+                </div>
+                <span class="pull-right col-md-3">
+                        <img [src]="recipe.imagePath" alt="" class="" style="max-height: 50px;" />
+                </span>
+        </div>
 </a>

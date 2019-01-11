@@ -41,10 +41,11 @@
     margin: 2em 0;
 }
 
-.w3-agileits-gallery-grids a {
+.w3-agileits-gallery-grids a,.w3-agileits-gallery-grids .img_block {
     display: block;
     overflow: hidden;
-	position:relative;
+    position:relative;
+    cursor: pointer;
 }
 .agile-b-wrapper{
     background: rgba(0, 0, 0, 0.58);
@@ -60,7 +61,7 @@
     color: #fff;
     padding: 1em;
 }
-.w3-agileits-gallery-grids a:hover .agile-b-wrapper{
+.w3-agileits-gallery-grids a:hover .agile-b-wrapper,.w3-agileits-gallery-grids .img_block:hover .agile-b-wrapper {
 	height: 100%;
 	opacity: 1;
 }

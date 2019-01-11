@@ -1,0 +1,51 @@
+<!-- footer -->
+<div class="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grids">
+        <div class="col-md-4 footer-grid">
+          <div class="footer-logo">
+            <a  routerLink="/">Recipe book</a>
+            <p>This is an interesting application for creating and storing your recipes. 
+              You can add new recipes and make a shopping list.</p>
+          </div>
+        </div>
+        <div class="col-md-3 footer-grid">
+          <h3>Navigation</h3>
+          <ul>
+            <li routerLinkActive="active"><a routerLink="/">Home</a></li>
+            <li routerLinkActive="active"><a routerLink="/recipes">Recipes</a></li>
+            <li routerLinkActive="active"><a routerLink="/shopping-list">Shopping List</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-md-2 agile-footer-grid">
+        </div>
+        <div class="col-md-3 agile-footer-grid">
+          <h3>Subscribe</h3>
+          <form 
+            [formGroup]="subscribeForm"
+            (ngSubmit)="onSubscribe(subscribeForm)">
+            <input
+            type="email" 
+            id="email" 
+            name="email"           
+            formControlName="email"
+            class="form-control"
+            required="">
+            <input type="submit" value="Send">
+          </form>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- //footer -->
+<!-- copyright -->
+<div class="wthree_copy_right">
+<div class="container">
+  <p>Copyright &copy; 2018 Recipe book.</p>    
+</div>
+</div>
+<!-- //copyright -->

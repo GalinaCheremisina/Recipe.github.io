@@ -1,0 +1,7 @@
+.but_manage button{
+    margin-right: 5px;
+}
+input,select {
+    border-radius: 0;
+    border-color: #f90;
+}

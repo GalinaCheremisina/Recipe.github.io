@@ -1,4 +1,6 @@
-<div class="row">
+<div class="container login_wrap">
+  <h2>Login form</h2>
+  <div class="row">
   <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
     <form 
       [formGroup]="authForm" 
@@ -7,7 +9,7 @@
         <label for="email">Mail</label>
         <input 
           type="email" 
-          id="email" 
+          id="emaill" 
           name="email"           
           formControlName="email"
           class="form-control">
@@ -22,9 +24,10 @@
           class="form-control">
       </div>
       <button 
-        class="btn btn-primary"
+        class="btn btn-singin"
         type="submit"
         [disabled]="!authForm.valid">Sign Ip</button>
     </form>
   </div>
+</div>
 </div>

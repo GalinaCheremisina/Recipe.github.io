@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from "@ngrx/store";
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
+import { Lightbox } from 'ngx-lightbox';
 
 import { Recipe } from '../recipe.model';
 import 'rxjs/add/operator/take';
@@ -25,7 +26,8 @@ export class RecipesDetailComponent implements OnInit{
   constructor(
     private _route:ActivatedRoute,
     private _router:Router,
-    private _store: Store<fromRecipe.FeatureState>) { }
+    private _store: Store<fromRecipe.FeatureState>,
+    private _lightbox: Lightbox) { }
 
   ngOnInit(){
     this.authState$ = this._store.select('auth');
@@ -37,7 +39,7 @@ export class RecipesDetailComponent implements OnInit{
     )
   }
   
-  onAddToShoppingList(){
+  onAddToShoppingList(): void {
     this._store.select('recipes')
         .take(1)
         .subscribe((recipeState:fromRecipe.State)=>{
@@ -47,13 +49,21 @@ export class RecipesDetailComponent implements OnInit{
         })
   }
 
-  onRecipeEdit(){
+  onRecipeEdit(): void{
     this._router.navigate(['edit'],{relativeTo:this._route});
   }
 
-  onDeleteEdit(){
+  onDeleteEdit(): void{
     this._store.dispatch(new RecipeActions.DeleteRecipes(this.recipeSelectedId));
     this._router.navigate(["recipes"]);
   }
 
+  open(event): void {
+    const src = event.target.alt;
+    this._lightbox.open([{src: src, caption: '', thumb: ''}]);
+  }
+
+  close(): void {
+    this._lightbox.close();
+  }
 }

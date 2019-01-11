@@ -38,7 +38,7 @@ a.dropdown-toggle,.dropdown a{cursor: pointer;}
 }
 .logo{
 	text-align:center;
-	margin:6em 0em 2em;
+	margin:5em 0em 2em;
 }
 .logo a {
     color: #fff;
@@ -46,6 +46,9 @@ a.dropdown-toggle,.dropdown a{cursor: pointer;}
     padding: 0.5em;
     font-weight: 600;
     font-size: 2em;
+}
+.navbar{
+    border-width: 0;
 }
 .navbar-nav > li {
     float: none;
@@ -59,7 +62,7 @@ a.dropdown-toggle,.dropdown a{cursor: pointer;}
     -moz-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
-	padding:1em 0em 4em;
+	padding:1em 0em 2em;
 }
 .w3l-banner1 {
    background: url(/assets/img/template/banner2.jpg) no-repeat 0px 0px;

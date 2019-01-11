@@ -14,6 +14,7 @@ import { RecipesRoutingModule } from "./recires-routing.module";
 import { SharedModule } from "../shared/shared.module";
 import { recipesReduser } from "./store/recipes.redusers";
 import { RecipeEffects } from "./store/recipes.effects";
+import { LightboxModule } from "ngx-lightbox";
 
 @NgModule({
     declarations:[
@@ -28,6 +29,7 @@ import { RecipeEffects } from "./store/recipes.effects";
         CommonModule,
         ReactiveFormsModule,
         RecipesRoutingModule,
+        LightboxModule,
         SharedModule,
         StoreModule.forFeature('recipes',recipesReduser),
         EffectsModule.forFeature([RecipeEffects])

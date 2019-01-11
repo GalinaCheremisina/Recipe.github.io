@@ -1,4 +1,10 @@
-<div class="row">
+<div class="container shopping_wraper">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Shopping list</h2>
+    </div>
+  </div>
+  <div class="row">
   <div class="col-xs-10">
     <app-shopping-edit></app-shopping-edit>
     <hr/>    
@@ -7,10 +13,11 @@
           class="list-group-item"
           *ngFor="let ingredient of ($ingredients | async).ingredients; let i = index"
           (click)="onEditItem(i)">
-        <a
-           style="cursor:pointer;">
-          {{ingredient.name}}({{ingredient.amount}})
-      </a></li>
+        <a style="cursor:pointer;">
+          {{ingredient.name}} ( {{ingredient.amount}} {{ingredient.step}} )
+        </a>
+        </li>
     </ul>
+  </div>
   </div>
 </div>

@@ -1,0 +1,16 @@
+.btn-new{
+    outline: none;
+    padding: 0.6em 1em;
+    background: #ff9900;
+    font-size: 14px;
+    color: #fff;
+    margin: 0 0 1em 0;
+    border: 2px solid #ff9900;
+    width: 60%;
+    text-transform: uppercase;
+}
+.btn-new:hover {
+    border: 2px solid #ff9900;
+    background: none;
+    color: #ff9900;
+}

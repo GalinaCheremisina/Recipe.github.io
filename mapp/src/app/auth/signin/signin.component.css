@@ -1,0 +1,28 @@
+.login_wrap{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+input {
+    border-radius: 0;
+    border-color: #f90;
+}
+h2{
+    text-align: center;
+}
+.btn-singin:hover {
+    border: 2px solid #ff9900;
+    background: none;
+    color: #000;
+}
+.btn-singin {
+    outline: none;
+    padding: 0.6em 1em;
+    background: #ff9900;
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    margin: 1em 0 0;
+    border-radius: 0;
+    border: 2px solid #ff9900;
+    text-transform: uppercase;
+}

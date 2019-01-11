@@ -1,11 +1,15 @@
 <div class="row">
   <div class="col-xs-12">
-    <img [src]="(recipes$ | async).recipes[recipeSelectedId].imagePath" alt="" class="img-responsive" style="max-height: 200px;" />
+    <img
+      [alt]="(recipes$ | async).recipes[recipeSelectedId].imagePath" 
+      [src]="(recipes$ | async).recipes[recipeSelectedId].imagePath" 
+      class="img-responsive recipe_detail_img"
+      (click)='open($event)' />
   </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-      <h1>{{(recipes$ | async).recipes[recipeSelectedId].name}}</h1>
+      <h3>{{(recipes$ | async).recipes[recipeSelectedId].name}}</h3>
     </div>
 </div>
 <div class="row">
@@ -15,7 +19,7 @@
     appDropdown>
       <button 
         type="" 
-        class="btn btn-primary dropdown-toggle">
+        class="btn btn-manage dropdown-toggle">
         Manage Recipe <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
@@ -28,17 +32,18 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    {{(recipes$ | async).recipes[recipeSelectedId].description}}
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
     <ul class="list-group">
       <li
       class="list-group-item"
       *ngFor="let ingredient of (recipes$ | async).recipes[recipeSelectedId].ingredients">
-        {{ingredient.name}} ({{ingredient.amount}})
+        {{ingredient.name}} ({{ingredient.amount}} {{ingredient.step}})
     </li>
     </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 recipe_description">
+    <h4>Directions</h4>
+    <div [innerHtml]="(recipes$ | async).recipes[recipeSelectedId].description"></div>
   </div>
 </div>

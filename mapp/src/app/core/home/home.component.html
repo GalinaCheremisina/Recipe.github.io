@@ -2,13 +2,10 @@
     <div class="container">
         <div class="col-md-5 about-left">
             <h2>About Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut risus eg
-                et libero finibus facilisis. Phasellus tempus hendrerit sem ut iaculis. Se
-                d sit amet augue sit amet mauris gravida interdum. Donec vulputate tempus se
-                m eget vulputate. Integer placerat tincidunt sem, at sodales justo. Vestibu
-                lum sodales dictum scelerisque. Phasellus viverra rutrum erat, nec consequ
-                at tortor fringilla vitae.  Integer placerat tincidunt sem, at sodales justo.In
-                teger placerat tincidunt sem, at sodales justo.. </p>
+            <p>This is an interesting application for creating <br/>and storing your recipes. </p>
+			<p>You can add new recipes and edit existing ones.</p>
+			<p>And also make and edit shopping lists.</p>
+			<p>Have a nice work! </p>
             <div class="clearfix"></div>
         </div>
         
@@ -18,90 +15,92 @@
         </div>
     </div>
 </section>
+
 <div class="gallery" id="gallery">
 		<div class="container">
 			<div class="agile-heading">
 				<h3>Our Gallery</h3>
 			</div>
 			<div class="agileinfo-gallery">
+
 			<div class="gallery-grid-top">
 				<div class="col-md-6 col-sm-6 w3-agileits-gallery-grids">
-					<a href="/assets/img/template/g1.jpg">
-						<img src="/assets/img/template/g1.jpg" class="img-responsive" alt=" "/>
+					<div class="img_block" (click)="open('/assets/img/template/g1.jpg')">
+						<img src="/assets/img/template/g1.jpg" class="img-responsive"/>
 						<div class="agile-b-wrapper">
-                            <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
+							<i class="glyphicon glyphicon-search" aria-hidden="true"></i>
 						</div>
-					</a>
+					</div>
 				</div>
 				<div class="col-md-6 col-sm-6 w3-agileits-gallery-grids">
-					<a href="/assets/img/template/b5.jpg">
+					<div class="img_block" (click)="open('/assets/img/template/b5.jpg')">
 						<img src="/assets/img/template/b5.jpg" class="img-responsive" alt=" "/>
 						<div class="agile-b-wrapper">
                             <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
 						</div>
-					</a>
+					</div>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
 			<div class="gallery-grid-middle">
-				<div class="col-md-3 w3-agileits-gallery-grids agileits-gallery-grids">
-					<a href="/assets/img/template/b7.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen book It has survived not only five centuries, but also remaining essentially unchanged. ">
+				<div class="col-md-3 col-sm-6 w3-agileits-gallery-grids agileits-gallery-grids">
+					<div class="img_block" (click)="open('/assets/img/template/b7.jpg')">
 						<img src="/assets/img/template/b7.jpg" class="img-responsive" alt=" "/>
 						<div class="agile-b-wrapper">
                             <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
 						</div>
-					</a>
+					</div>
 				</div>
-				<div class="col-md-3 w3-agileits-gallery-grids agileits-gallery-grids">
-					<a href="/assets/img/template/gallery3.jpg">
+				<div class="col-md-3 col-sm-6 w3-agileits-gallery-grids agileits-gallery-grids">
+					<div class="img_block" (click)="open('/assets/img/template/gallery3.jpg')">
 						<img src="/assets/img/template/gallery3.jpg" class="img-responsive" alt=" "/>
 						<div class="agile-b-wrapper">
                                 <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
 						</div>
-					</a>
+					</div>
 				</div>
-				<div class="col-md-3 w3-agileits-gallery-grids agileits-gallery-grids">
-					<a  href="/assets/img/template/gallery5.jpg">
+				<div class="col-md-3 col-sm-6 w3-agileits-gallery-grids agileits-gallery-grids">
+					<div class="img_block" (click)="open('/assets/img/template/gallery5.jpg')">
 						<img src="/assets/img/template/gallery5.jpg" class="img-responsive" alt=" "/>
 						<div class="agile-b-wrapper">
 							<i class="glyphicon glyphicon-search" aria-hidden="true"></i>
 						</div>
-					</a>
+					</div>
 				</div>
-				<div class="col-md-3 w3-agileits-gallery-grids agileits-gallery-grids gallery-two">
-					<a href="/assets/img/template/gallery6.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen book It has survived not only five centuries, but also essentially unchanged. ">
+				<div class="col-md-3 col-sm-6 w3-agileits-gallery-grids agileits-gallery-grids">
+					<div class="img_block" (click)="open('/assets/img/template/gallery6.jpg')">
 						<img src="/assets/img/template/gallery6.jpg" class="img-responsive" alt=" "/>
 						<div class="agile-b-wrapper">
 							<i class="glyphicon glyphicon-search" aria-hidden="true"></i>
 						</div>
-					</a>
+					</div>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
 			<div class="gallery-grid-bottom">
-				<div class="col-md-4 w3-agileits-gallery-grids">
-					<a href="/assets/img/template/gallery1.jpg">
+				<div class="col-md-4 col-sm-4 w3-agileits-gallery-grids">
+					<div class="img_block" (click)="open('/assets/img/template/gallery1.jpg')">
 						<img src="/assets/img/template/gallery1.jpg" class="img-responsive" alt=" "/>
 						<div class="agile-b-wrapper">
 							<i class="glyphicon glyphicon-search" aria-hidden="true"></i>
 						</div>
-					</a>
+					</div>
 				</div>
-				<div class="col-md-4 w3-agileits-gallery-grids">
-					<a href="/assets/img/template/g2.jpg">
+				<div class="col-md-4 col-sm-4 w3-agileits-gallery-grids">
+					<div class="img_block" (click)="open('/assets/img/template/g2.jpg')">
 						<img src="/assets/img/template/g2.jpg" class="img-responsive" alt=" "/>
 						<div class="agile-b-wrapper">
 							<i class="glyphicon glyphicon-search" aria-hidden="true"></i>
 						</div>
-					</a>
+					</div>
 				</div>
-				<div class="col-md-4 w3-agileits-gallery-grids">
-					<a href="/assets/img/template/gallery9.jpg">
+				<div class="col-md-4 col-sm-4 w3-agileits-gallery-grids">
+					<div class="img_block" (click)="open('/assets/img/template/gallery9.jpg')">
 						<img src="/assets/img/template/gallery9.jpg" class="img-responsive" alt=" "/>
 						<div class="agile-b-wrapper">
 							<i class="glyphicon glyphicon-search" aria-hidden="true"></i>
 						</div>
-					</a>
+					</div>
 				</div>
 				<div class="clearfix"> </div>
 			</div>

@@ -2,11 +2,10 @@
     <div class="col-xs-12">
         <button 
             *ngIf="($authState | async).authenticated"
-            class="btn btn-success" 
+            class="btn btn-new" 
             (click)="onNewRecipe()">New recipe</button>
     </div>
 </div>
-<hr/>
 <div class="row">
     <div class="col-xs-12">
         <app-recipes-item 
