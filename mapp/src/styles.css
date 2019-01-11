@@ -45,3 +45,6 @@ a:focus, a:hover {
 	text-decoration: none;
 	outline: none;
 }
+.w3l-banner {
+    background: url('assets/img/template/banner3.jpg') no-repeat 0px 0px;
+}

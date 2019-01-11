@@ -56,7 +56,6 @@ a.dropdown-toggle,.dropdown a{cursor: pointer;}
     text-align: center;
 }
 .w3l-banner {
-    background: url(/assets/img/template/banner3.jpg) no-repeat 0px 0px;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -65,7 +64,6 @@ a.dropdown-toggle,.dropdown a{cursor: pointer;}
 	padding:1em 0em 2em;
 }
 .w3l-banner1 {
-   background: url(/assets/img/template/banner2.jpg) no-repeat 0px 0px;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;

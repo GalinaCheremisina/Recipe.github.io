@@ -59,7 +59,7 @@ export class RecipesDetailComponent implements OnInit{
   }
 
   open(event): void {
-    const src = event.target.alt;
+    const src = event.target.src;
     this._lightbox.open([{src: src, caption: '', thumb: ''}]);
   }
 

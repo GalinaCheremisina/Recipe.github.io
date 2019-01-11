@@ -1,7 +1,6 @@
 <div class="row">
   <div class="col-xs-12">
     <img
-      [alt]="(recipes$ | async).recipes[recipeSelectedId].imagePath" 
       [src]="(recipes$ | async).recipes[recipeSelectedId].imagePath" 
       class="img-responsive recipe_detail_img"
       (click)='open($event)' />
