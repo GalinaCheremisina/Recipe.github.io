@@ -10,3 +10,6 @@ a.list-group-item{
     background-color: rgba(255, 153, 0, 0.45098039215686275);
     border-color: #f90;
 }
+.pull-right img{
+    max-height: 50px;
+}

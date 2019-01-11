@@ -38,7 +38,8 @@ export class RecipesDetailComponent implements OnInit{
       }
     )
   }
-  
+
+/** This is a description of the onAddToShoppingList function. Data sending function. */
   onAddToShoppingList(): void {
     this._store.select('recipes')
         .take(1)
@@ -49,20 +50,24 @@ export class RecipesDetailComponent implements OnInit{
         })
   }
 
+/** This is a description of the onRecipeEdit function. Start editing recipe. */
   onRecipeEdit(): void{
     this._router.navigate(['edit'],{relativeTo:this._route});
   }
 
+/** This is a description of the onDeleteEdit function. Deleting recipe. */
   onDeleteEdit(): void{
     this._store.dispatch(new RecipeActions.DeleteRecipes(this.recipeSelectedId));
     this._router.navigate(["recipes"]);
   }
 
+/** This is a description of the open function. Open popup window. */
   open(event): void {
     const src = event.target.src;
     this._lightbox.open([{src: src, caption: '', thumb: ''}]);
   }
 
+/** This is a description of the close function. Close popup window. */
   close(): void {
     this._lightbox.close();
   }

@@ -11,6 +11,7 @@ import * as fromRecipe from './recipes.redusers';
 
 @Injectable()
 export class RecipeEffects {
+  
     @Effect()
     recipeFetch = this.actions$
       .ofType(RecipeActions.FETCH_RECIPES)
@@ -22,7 +23,6 @@ export class RecipeEffects {
       })
       .map(
         (recipes) => {
-          console.log(recipes);
           for (let recipe of recipes) {
             if (!recipe['ingredients']) {
               recipe['ingredients'] = [];

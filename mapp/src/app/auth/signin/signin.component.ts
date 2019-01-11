@@ -19,6 +19,7 @@ export class SigninComponent {
 
   constructor(private _store: Store<fromAuth.State>) { }
 
+/** This is a description of the onSignip function. Data sending function. */
   onSignip(form: FormGroup){
     const email = form.value.email;
     const password = form.value.password;

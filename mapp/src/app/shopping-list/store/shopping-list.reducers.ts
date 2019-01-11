@@ -1,5 +1,4 @@
 import * as ShoppingListActions from './shopping-list.actions';
-
 import { Ingredient } from "../../shared/ingredient.model";
 
 export interface AppState{
@@ -18,6 +17,7 @@ const initialState = {
     editedIngredient: null,
     editedIngredientIndex: -1
 };
+
 export function shoppingListReducer(state = initialState, action: ShoppingListActions.ShoppingListActions){
 
     switch(action.type){
@@ -70,5 +70,4 @@ export function shoppingListReducer(state = initialState, action: ShoppingListAc
         default:
             return state;
     }
-    
 }

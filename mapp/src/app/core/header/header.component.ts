@@ -23,14 +23,17 @@ export class HeaderComponent implements OnInit{
     this.authState$ = this._store.select('auth');
   }
 
+/** This is a description of the onSaveData function. Data saving function. */
   onSaveData(){
     this._store.dispatch(new RecipeActions.StoreRecipes());
   }
 
+/** This is a description of the onFetchData function. Data fetching function. */
   onFetchData(){
     this._store.dispatch(new RecipeActions.FetchRecipes());
   }
 
+/** This is a description of the onLogout function. */
   onLogout() {
     this._store.dispatch(new AuthActions.Logout());
   }

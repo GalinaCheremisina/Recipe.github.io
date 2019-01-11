@@ -1,6 +1,5 @@
 import { Recipe } from "../recipe.model";
 import { Ingredient } from "src/app/shared/ingredient.model";
-
 import * as RecipesActions from './recipes.actions';
 import * as fromApp from '../../store/app.reducers';
 
@@ -11,6 +10,7 @@ export interface FeatureState extends fromApp.AppState {
 export interface State {
     recipes: Recipe[]
 };
+
 const initialState :State = {
     recipes : [
     new Recipe(
@@ -125,6 +125,7 @@ const initialState :State = {
                 new Ingredient("Icecube", 5)
             ]),
 ]}
+
 export function recipesReduser(state = initialState,action:RecipesActions.RecipeActions){
 
     switch(action.type){

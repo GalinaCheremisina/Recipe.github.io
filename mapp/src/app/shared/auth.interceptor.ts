@@ -9,6 +9,7 @@ import * as fromAuth from '../auth/store/auth.reducers';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
+  
   constructor(private store: Store<fromApp.AppState>) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {

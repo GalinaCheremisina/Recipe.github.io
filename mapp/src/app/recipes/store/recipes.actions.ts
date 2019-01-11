@@ -1,6 +1,6 @@
 import { Action } from "@ngrx/store";
-import { Recipe } from "../recipe.model";
 
+import { Recipe } from "../recipe.model";
 
 export const SET_RECIPES = 'SET_RECIPES';
 export const ADD_RECIPE = 'ADD_RECIPE';
@@ -14,21 +14,25 @@ export class SetRecipes implements Action{
 
     constructor(public payload:Recipe[]){}
 }
+
 export class AddRecipes implements Action{
     readonly type = ADD_RECIPE;
 
     constructor(public payload:Recipe){}
 }
+
 export class UpdateRecipes implements Action{
     readonly type = UPDATE_RECIPE;
 
     constructor(public payload: {index: number, updatedRecipe: Recipe}){}
 }
+
 export class DeleteRecipes implements Action{
     readonly type = DELETE_RECIPE;
 
     constructor(public payload:number){}
 }
+
 export class StoreRecipes implements Action {
   readonly type = STORE_RECIPES;
 }

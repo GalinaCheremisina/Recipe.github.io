@@ -4,11 +4,11 @@ import { CommonModule } from "@angular/common";
 import { ReactiveFormsModule } from "@angular/forms";
 import { LightboxModule } from 'ngx-lightbox';
 
-import { HeaderComponent } from "./header/header.component";
-import { HomeComponent } from "./home/home.component";
 import { AppRoutingModule } from "../app-routing.module";
 import { SharedModule } from "../shared/shared.module";
 import { AuthInterceptor } from "../shared/auth.interceptor";
+import { HeaderComponent } from "./header/header.component";
+import { HomeComponent } from "./home/home.component";
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({

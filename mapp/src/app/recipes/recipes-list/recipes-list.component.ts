@@ -26,8 +26,8 @@ export class RecipesListComponent implements OnInit {
     this.$recipes = this._store.select('recipes');
   }
 
+/** This is a description of the onNewRecipe function. */
   onNewRecipe(){
     this._router.navigate(['new'],{relativeTo:this._route});
   }
-
 }

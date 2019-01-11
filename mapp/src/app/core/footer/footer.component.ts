@@ -12,8 +12,8 @@ export class FooterComponent {
     email : new FormControl('',[Validators.email])
   });
 
+/** This is a description of the onSubscribe function. Data sending function. */
   onSubscribe(form: FormGroup){
     const email = form.value.email;
   }
-
 }

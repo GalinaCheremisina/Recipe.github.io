@@ -7,11 +7,11 @@ import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/mergeMap';
 import { fromPromise } from 'rxjs/observable/fromPromise';
 import * as firebase from 'firebase';
-
 import * as AuthActions from './auth.actions';
 
 @Injectable()
 export class AuthEffects{
+    
     @Effect()
     authSingup = this.$actions
         .ofType(AuthActions.TRY_SIGNUP)
@@ -35,6 +35,7 @@ export class AuthEffects{
                 }
             ];
         });
+
     @Effect()
     authSignin = this.$actions
           .ofType(AuthActions.TRY_SIGNIN)

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 
@@ -10,7 +10,7 @@ import * as AuthActions from '../store/auth.actions';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent {
 
   authForm: FormGroup = new FormGroup({
     email : new FormControl('',[Validators.email,Validators.required]),
@@ -19,9 +19,7 @@ export class SignupComponent implements OnInit {
 
   constructor(private _store: Store<fromApp.AppState>) { }
 
-  ngOnInit() {
-  }
-
+/** This is a description of the onSignup function. Data sending function. */
   onSignup(form: FormGroup) {
     const email = form.value.email;
     const password = form.value.password;

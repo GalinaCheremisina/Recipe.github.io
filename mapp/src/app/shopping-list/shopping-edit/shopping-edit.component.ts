@@ -42,7 +42,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy{
       );
   }
 
-  /*This is a description of the onAddItem function. It adds a new ingredient to ShoppingListService */
+/*This is a description of the onAddItem function. It adds a new ingredient to ShoppingListService */
   onAddItem(form:NgForm){
     const value = form.value;
     const newIngredient = new Ingredient(value.name,value.amount,value.step);
@@ -54,11 +54,13 @@ export class ShoppingEditComponent implements OnInit, OnDestroy{
     form.reset();
   }
 
+/*This is a description of the onClear function. Clearing form */
   onClear(){
     this.form.reset();
     this.editMode = false;
   }
 
+/*This is a description of the onDelete function. It deletes the ingredient from ShoppingList */
   onDelete(){
     this._store.dispatch(new ShoppingListAction.DeleteIngredient());
     this.onClear();
