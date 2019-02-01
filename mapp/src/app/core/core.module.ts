@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CommonModule } from "@angular/common";
 import { ReactiveFormsModule } from "@angular/forms";
-import { LightboxModule } from 'ngx-lightbox';
+import { LightboxModule } from 'ngx-lightbox'; 
 
 import { AppRoutingModule } from "../app-routing.module";
 import { SharedModule } from "../shared/shared.module";
